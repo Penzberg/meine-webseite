@@ -8,23 +8,28 @@
         body { font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 0; }
         h1 { background-color: #007bff; color: white; padding: 20px; }
         nav a { margin: 0 15px; text-decoration: none; font-weight: bold; color: #007bff; }
-        footer { margin-top: 20px; padding: 10px; background-color: #f4f4f4; }
+        .container { padding: 20px; }
+        .gallery-preview { width: 200px; border-radius: 5px; margin-top: 20px; }
     </style>
 </head>
 <body>
 
     <h1>Willkommen auf meiner Webseite</h1>
-    <p>Hier könnte dein Inhalt stehen.</p>
+    <p>Hier ist meine Bildergalerie:</p>
+
+    <div class="container">
+        <a href="galerie.html">
+            <img src="bilder/bild1.jpg" class="gallery-preview" alt="Zur Galerie">
+        </a>
+        <p><a href="galerie.html">→ Zur Galerie</a></p>
+    </div>
 
     <nav>
         <a href="index.html">Startseite</a> |
+        <a href="galerie.html">Galerie</a> |
         <a href="impressum.html">Impressum</a> |
         <a href="datenschutz.html">Datenschutz</a>
     </nav>
-
-    <footer>
-        <p>&copy; 2024 Dein Name</p>
-    </footer>
 
 </body>
 </html>
