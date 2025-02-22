@@ -18,11 +18,7 @@
     <h1>Bildergalerie</h1>
     <p>Hier sind die hochgeladenen Bilder:</p>
 
-    <div class="gallery">
-        <img src="bilder/IMG_6321.jpg" alt="Bild 1">
-       
-        <!-- Weitere Bilder einfach hier hinzufügen -->
-    </div>
+    <div class="gallery" id="gallery"></div>
 
     <nav>
         <a href="index.html">Startseite</a> |
@@ -33,6 +29,23 @@
     <footer>
         <p>&copy; 2024 Dein Name</p>
     </footer>
+
+    <script>
+        fetch('bilder.json') // Lade die Bildnamen aus der JSON-Datei
+            .then(response => response.json())
+            .then(data => {
+                const galleryDiv = document.getElementById("gallery");
+                data.bilder.forEach(img => {
+                    let imageElement = document.createElement("img");
+                    imageElement.src = "bilder/" + img;
+                    imageElement.alt = "Bild";
+                    galleryDiv.appendChild(imageElement);
+                });
+            })
+            .catch(error => {
+                console.error("Fehler beim Laden der Bilder:", error);
+            });
+    </script>
 
 </body>
 </html>
